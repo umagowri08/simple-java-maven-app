@@ -32,5 +32,10 @@ pipeline {
                 sh './jenkins/scripts/deliver.sh'
             }
         }
+        stage('Complete') {
+            steps {
+                echo "The build got completed with test and deploy"
+            }
+        }
     }
 }
