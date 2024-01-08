@@ -27,15 +27,10 @@ pipeline {
                 }
             }
         }
-        stage("Variables"){
-            steps{
-                echo "Constructed JAR file path: target/${NAME}-${VERSION}.jar"
+        stage('Deliver') {
+            steps {
+                sh './jenkins/scripts/deliver.sh'
             }
         }
-        // stage('Deliver') {
-        //     steps {
-        //         sh './jenkins/scripts/deliver.sh'
-        //     }
-        // }
     }
 }
